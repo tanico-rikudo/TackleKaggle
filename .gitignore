@@ -1,0 +1,7 @@
+# Geenral setting
+/**/.DS_Store
+/**/.ipynb_checkpoints
+
+# Super boul 
+/SuperBoul/data/*
+/SuperBoul/pickle/*
