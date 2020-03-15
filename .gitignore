@@ -1,3 +1,4 @@
+/NewYork/tmp_data/*
 # Geenral setting
 /**/.DS_Store
 /**/.ipynb_checkpoints
@@ -5,3 +6,18 @@
 # Super boul 
 /SuperBoul/data/*
 /SuperBoul/pickle/*
+/SuperBoul/markdown/*
+
+# Pbs Kids
+/PbsKids/source/*
+/PbsKids/pickle/*
+
+# data ignore
+/*/data/*
+/*/pickle/*
+/*/input/*
+/*/training_checkpoints/*
+/*/*tensorflow_log/*
+
+/lstm_attension_tutiorial/training_checkpoints/*
+/sample_lstm/tmp/tensorflow_log/*
