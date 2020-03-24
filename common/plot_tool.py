@@ -2,6 +2,7 @@ import matplotlib as mpl
 import matplotlib.pyplot as plt
 import matplotlib.cm as cm
 from matplotlib.dates import drange
+import matplotlib.dates as mdates
 from matplotlib.dates import DateFormatter
 import matplotlib.gridspec as gridspec
 import seaborn as sns
@@ -10,9 +11,16 @@ class Fig:
     def __init__(self,**kwargs):
         self.fig = plt.figure(
             figsize=kwargs['figsize'],
-            facecolor='w', #fixed
-            tight_layout=True
+            facecolor='w'#, #fixed
+#             tight_layout=True
         )
+        
+    def subtitle(self,_title):
+        self.fig.suptitle(_title)
+        
+    def adjust(self):
+        plt.tight_layout()
+#         plt.subplots_adjust(top=0.1)
 
 class Ax:
     
@@ -68,6 +76,9 @@ class Ax:
             **kwargs
         )
         
+    def set_title(self,_title):
+        self.ax.title(_title)
+        
     
     def set_ylim(self,minmax):
         _min,_max = minmax
@@ -94,6 +105,9 @@ class Ax:
         self.ax.legend(
             **kwargs
         )
+    
+    def get_legend_handles_labels(self,**kwargs):
+        return self.ax.get_legend_handles_labels(**kwargs)
         
     def set_ticks(self,axis, ls_use_data_num ,is_minor,**kwargs):
         # 軸 の目盛りを設定する。(データの値ではなく、データの順番で指定)
@@ -102,15 +116,28 @@ class Ax:
         elif axis == 'y':
             self.ax.set_yticks(ls_use_data_num,is_minor)
             
-    def set_title(title):
+    def set_title(self,title):
         self.ax.set_title(title)
-    
-    def set_title(title):
-        self.ax.set_title(title)
+        
+    def set_xlabel(self,_label,**kwargs):
+        self.ax.set_xlabel(
+            _label,
+            **kwargs
+        )
+        
+    def set_ylabel(self,_label,**kwargs):
+        self.ax.set_ylabel(
+            _label,
+            **kwargs
+        )
 
     def xticklabelsDateFormatter(self,_format):
         xaxis_ = self.ax.xaxis
         xaxis_.set_major_formatter(DateFormatter(_format))
+        
+    def tick_params(self,axis,**kwargs):
+        self.ax.tick_params(axis,**kwargs)
+
 
     def grid(self,axis,is_major,**kwargs):   
         # 軸に目盛線を設定
@@ -120,9 +147,19 @@ class Ax:
             axis = axis, 
             **kwargs
         )
+        
+    def datexgrid(self,is_major,locator=mdates.MonthLocator(interval=6)):
+        if is_major:
+            self.ax.xaxis.set_major_locator(locator)
+        else:
+            self.ax.xaxis.set_minor_locator(locator)
+        
 
     def tab20(self,color_num):
         return cm.tab20(color_num)
     
     def tab10(self,color_num):
         return cm.tab10(color_num)
+    
+    def twinx(self):
+        return self.ax.twinx()
