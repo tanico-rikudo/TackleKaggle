@@ -1,0 +1,14 @@
+window.location.href = document.querySelector("#rendered-kernel-content").getAttribute("src")
+
+// スクロールの無効化解除
+document.querySelector("body").style.overflowY="visible"
+
+// コードセルのclassに.notranslateを追加
+document.querySelectorAll(".input").forEach((element) => {
+  element.classList.add("notranslate")
+})
+
+// コードの出力セルのclassに.notranslateを追加
+document.querySelectorAll(".output_wrapper").forEach((element) => {
+  element.classList.add("notranslate")
+})
