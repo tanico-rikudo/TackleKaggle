@@ -68,7 +68,7 @@ class Ax:
         if 'has_mean' in  kwargs.keys():
             kwargs['showmeans'] =True
             kwargs['meanprops']=dict(marker='o',markeredgecolor='k', markerfacecolor='r')
-            del kwargs['has_means']
+            del kwargs['has_mean']
                     
         ax = sns.boxplot(
             data=data, 
