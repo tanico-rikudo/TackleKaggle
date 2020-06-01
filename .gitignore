@@ -1,0 +1,27 @@
+# Geenral setting
+/**/.DS_Store
+/**/.ipynb_checkpoints
+
+# Super boul 
+/SuperBoul/data/*
+/SuperBoul/pickle/*
+/SuperBoul/markdown/*
+
+# Pbs Kids
+/PbsKids/source/*
+/PbsKids/pickle/*
+
+# Newyork
+/NewYork/tmp_data/*
+
+# data ignore
+/**/data/*
+/**/pickle/*
+/**/input/*
+/**/training_checkpoints/*
+/**/tensorflow_log/*
+/**/*.csv
+/**/*.pickle
+/**/*.pkl
+/**/*.wav
+/**/*.tfrecord
