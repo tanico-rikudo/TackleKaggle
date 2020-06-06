@@ -21,5 +21,5 @@ save_interval = 50
 # 使用するファイルpathを記述
 train_files = "./train_files.txt"
 test_files = "./test_files.txt"
-result_dir = "./result/"
+result_dir = "result/"
 load_path = None

@@ -5,7 +5,7 @@ from utils import *
 
 # parameters
 import hparams
-from wavenet.utils import files_to_list, mulaw_quantize, trim_silence, melspectrogram, load_wav
+from wavenet.tf2.utils import files_to_list, mulaw_quantize, trim_silence, melspectrogram, load_wav
 
 
 ### tf.trainで許可されている型 へ変換する

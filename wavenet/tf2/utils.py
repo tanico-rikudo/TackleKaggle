@@ -95,7 +95,7 @@ def melspectrogram(wav, sampling_rate, num_mels, n_fft, hop_size, window_size):
 
 
 if __name__ == '__main__':
-    wav = load_wav("./wavs/p376_001.wav",hparams.sampling_rate)
+    wav = load_wav("wavs/p376_001.wav", hparams.sampling_rate)
     wav = trim_silence(wav, top_db=40, fft_size=2048, hop_size=512)
     wav = normalize(wav) * 0.95 #[-0.95, 0,95]へ
     mel_sp = melspectrogram(
