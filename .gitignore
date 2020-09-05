@@ -25,3 +25,4 @@
 /**/*.pkl
 /**/*.wav
 /**/*.tfrecord
+/**/*.tar.gz
